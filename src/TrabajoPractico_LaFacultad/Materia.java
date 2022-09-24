@@ -1,28 +1,67 @@
 package TrabajoPractico_LaFacultad;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.Arrays;
+import java.util.LinkedList;
 
 public class Materia implements Informacion{
 
     private String nombre;
     private Profesor titular;
-    private Estudiante[] coleccionEstudiantes;
+    private LinkedList<Estudiante> coleccionEstudiantes;
 
-    public Materia(String nombre, Profesor titular, Estudiante[] coleccionEstudiantes) {
+    public Materia(String nombre, Profesor titular, LinkedList<Estudiante> coleccionEstudiantes) {
         this.nombre = nombre;
         this.titular = titular;
         this.coleccionEstudiantes = coleccionEstudiantes;
-    }
 
+    }
     void agregarEstudiante(Estudiante estudiante){
+        this.coleccionEstudiantes.add(estudiante);
     }
-
     void eliminarEstudiante(String nombre){
+        for (Estudiante estudiante:coleccionEstudiantes){
+            if (estudiante.getNombre().equals(nombre)){
+                coleccionEstudiantes.remove(estudiante);
+            }
+        }
     }
 
-    void encontrarMateria(String nombre){
+    void modificarTitular(Profesor profesor) {
+        setTitular(profesor);
+    }
 
+    public String getNombre() {
+        return nombre;
+    }
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+
+    public Profesor getTitular() {
+        return titular;
+    }
+
+    public void setTitular(Profesor titular) {
+        this.titular = titular;
+
+    }
+
+    public LinkedList<Estudiante> getColeccionEstudiantes() {
+        return coleccionEstudiantes;
+    }
+
+    public void setColeccionEstudiantes(LinkedList<Estudiante> coleccionEstudiantes) {
+        this.coleccionEstudiantes = coleccionEstudiantes;
+    }
+
+    @Override
+    public String toString() {
+        return "Materia{" +
+                "nombre='" + nombre + '\'' +
+                ", titular=" + titular +
+                ",\n Estudiantes="  + coleccionEstudiantes.toString() +
+                '}';
     }
 
     @Override
@@ -32,6 +71,16 @@ public class Materia implements Informacion{
 
     @Override
     public String listarContenido() {
+        return null;
+    }
+
+    @Override
+    public int verCantidad(){
+        return 0;
+    }
+
+    @Override
+    public String listarContenido(){
         return null;
     }
 }

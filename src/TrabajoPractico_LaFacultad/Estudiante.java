@@ -10,4 +10,13 @@ public class Estudiante extends Persona {
     void modificarDatos(String nombre, String apellido, int legajo) {
         super.modificarDatos(nombre, apellido, legajo);
     }
+
+    @Override
+    public String toString() {
+        return "Estudiante{" +
+                "nombre='" + this.getNombre() + '\'' +
+                ", apellido='" + this.getApellido() + '\'' +
+                ", legajo=" + this.getLegajo() +
+                "}";
+    }
 }
