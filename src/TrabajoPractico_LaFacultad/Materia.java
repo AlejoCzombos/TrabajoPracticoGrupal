@@ -3,7 +3,7 @@ package TrabajoPractico_LaFacultad;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Materia {
+public class Materia implements Informacion{
 
     private String nombre;
     private Profesor titular;
@@ -12,6 +12,7 @@ public class Materia {
     public Materia(String nombre, Profesor titular, Estudiante[] coleccionEstudiantes) {
         this.nombre = nombre;
         this.titular = titular;
+        this.coleccionEstudiantes = coleccionEstudiantes;
     }
 
     void agregarEstudiante(Estudiante estudiante){
@@ -24,4 +25,13 @@ public class Materia {
 
     }
 
+    @Override
+    public int verCantidad() {
+        return 0;
+    }
+
+    @Override
+    public String listarContenido() {
+        return null;
+    }
 }

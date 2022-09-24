@@ -1,6 +1,6 @@
 package TrabajoPractico_LaFacultad;
 
-public class Carrera {
+public class Carrera implements Informacion {
     private String nombre;
     private Materia coleccionMaterias;
 
@@ -21,4 +21,13 @@ public class Carrera {
 
     }
 
+    @Override
+    public int verCantidad() {
+        return 0;
+    }
+
+    @Override
+    public String listarContenido() {
+        return null;
+    }
 }
