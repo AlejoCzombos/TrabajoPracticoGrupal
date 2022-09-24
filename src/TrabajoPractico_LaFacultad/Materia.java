@@ -1,27 +1,63 @@
 package TrabajoPractico_LaFacultad;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.Arrays;
+import java.util.LinkedList;
 
 public class Materia {
 
     private String nombre;
     private Profesor titular;
-    private Estudiante[] coleccionEstudiantes;
+    private LinkedList<Estudiante> coleccionEstudiantes;
 
-    public Materia(String nombre, Profesor titular, Estudiante[] coleccionEstudiantes) {
+    public Materia(String nombre, Profesor titular, LinkedList<Estudiante> coleccionEstudiantes) {
         this.nombre = nombre;
+        this.titular = titular;
+        this.coleccionEstudiantes = coleccionEstudiantes;
+    }
+    void agregarEstudiante(Estudiante estudiante){
+        this.coleccionEstudiantes.add(estudiante);
+    }
+    void eliminarEstudiante(String nombre){
+        for (Estudiante estudiante:coleccionEstudiantes){
+            if (estudiante.getNombre().equals(nombre)){
+                coleccionEstudiantes.remove(estudiante);
+            }
+        }
+    }
+    void modificarTitular(Profesor profesor) {
+        setTitular(profesor);
+    }
+
+    public String getNombre() {
+        return nombre;
+    }
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+
+    public Profesor getTitular() {
+        return titular;
+    }
+
+    public void setTitular(Profesor titular) {
         this.titular = titular;
     }
 
-    void agregarEstudiante(Estudiante estudiante){
+    public LinkedList<Estudiante> getColeccionEstudiantes() {
+        return coleccionEstudiantes;
     }
 
-    void eliminarEstudiante(String nombre){
+    public void setColeccionEstudiantes(LinkedList<Estudiante> coleccionEstudiantes) {
+        this.coleccionEstudiantes = coleccionEstudiantes;
     }
 
-    void encontrarMateria(String nombre){
-
+    @Override
+    public String toString() {
+        return "Materia{" +
+                "nombre='" + nombre + '\'' +
+                ", titular=" + titular +
+                ",\n Estudiantes="  + coleccionEstudiantes.toString() +
+                '}';
     }
-
 }
