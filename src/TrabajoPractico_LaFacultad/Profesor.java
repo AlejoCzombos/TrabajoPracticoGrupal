@@ -6,7 +6,7 @@ public class Profesor extends Persona {
     private double basico;
     private int antiguedad;
     private double sueldo;
-
+    private int sueldoalcuadrado;
 
     public Profesor(String nombre, String apellido, int legajo) {
         super(nombre, apellido, legajo);
@@ -52,5 +52,6 @@ public class Profesor extends Persona {
     public void setLegajo(int legajo) {
         super.setLegajo(legajo);
     }
+
 }
 

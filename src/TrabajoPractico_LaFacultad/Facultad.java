@@ -21,8 +21,7 @@ public class Facultad implements Informacion{
     }
 
     @Override
-    public int verCantidad(){
-
+    public int verCantidad() {
         return 0;
     }
 

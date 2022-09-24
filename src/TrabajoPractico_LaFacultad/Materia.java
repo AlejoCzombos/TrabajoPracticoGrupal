@@ -74,13 +74,4 @@ public class Materia implements Informacion{
         return null;
     }
 
-    @Override
-    public int verCantidad(){
-        return 0;
-    }
-
-    @Override
-    public String listarContenido(){
-        return null;
-    }
 }
