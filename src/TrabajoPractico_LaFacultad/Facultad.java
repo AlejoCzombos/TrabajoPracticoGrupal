@@ -1,22 +1,34 @@
 package TrabajoPractico_LaFacultad;
+import java.util.LinkedList;
 
 public class Facultad {
-    private String nombre;
-    private Carrera ColeccionCarreras[];
 
-    public Facultad(){}
-    public Facultad(String nombre, Carrera colleccionCarrera[]){
+    final private String nombre;
+    final private LinkedList<Carrera> coleccionCarrera;
+
+
+    public Facultad(String nombre){
         this.nombre = nombre;
-        this.ColeccionCarreras = colleccionCarrera;
+        this.coleccionCarrera = new LinkedList<>();
     }
 
-    void agregarCarrera(Carrera carrera){
-
+    public void agregarCarrera(Carrera nuevaCarrera){
+        coleccionCarrera.add(nuevaCarrera);
     }
-    void eliminarCarrera(String nombreCarrera){
 
+    public void eliminarCarrera(String carrera){
+        for(Carrera x : coleccionCarrera){
+            if(x.getNombre().equals(carrera)){
+                coleccionCarrera.remove(x);
+            }
+        }
     }
-    void eliminarEstudiante(Estudiante estudiante){
 
+    public void mostrarCarreras() {
+        System.out.println("Carreras de "+this.nombre+":");
+        for (Carrera carrera : coleccionCarrera) {
+            System.out.println("-" + carrera.toString());
+        }
     }
+
 }
