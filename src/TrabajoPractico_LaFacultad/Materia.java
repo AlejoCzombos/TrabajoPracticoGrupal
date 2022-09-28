@@ -1,6 +1,5 @@
 package TrabajoPractico_LaFacultad;
 
-import java.util.Arrays;
 import java.util.LinkedList;
 
 public class Materia {
@@ -9,10 +8,10 @@ public class Materia {
     private Profesor titular;
     private LinkedList<Estudiante> coleccionEstudiantes;
 
-    public Materia(String nombre, Profesor titular, LinkedList<Estudiante> coleccionEstudiantes) {
+    public Materia(String nombre, Profesor titular) {
         this.nombre = nombre;
         this.titular = titular;
-        this.coleccionEstudiantes = coleccionEstudiantes;
+        this.coleccionEstudiantes = new LinkedList<>();
     }
     void agregarEstudiante(Estudiante estudiante){
         this.coleccionEstudiantes.add(estudiante);
