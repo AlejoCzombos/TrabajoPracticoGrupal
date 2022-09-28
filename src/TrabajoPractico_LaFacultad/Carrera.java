@@ -2,7 +2,10 @@ package TrabajoPractico_LaFacultad;
 import java.util.LinkedList;
 import java.util.Scanner;
 
-public class Carrera {
+
+public class Carrera implements Informacion {
+    private String nombre;
+    private Materia coleccionMaterias;
 
     final private String nombre;
     final private LinkedList<Materia> coleccionMateria;
@@ -54,8 +57,16 @@ public class Carrera {
         }
     }
 
-    @Override
     public String toString() {
         return nombre;
+    }
+}
+    public int verCantidad() {
+        return 0;
+    }
+
+    @Override
+    public String listarContenido() {
+        return null;
     }
 }

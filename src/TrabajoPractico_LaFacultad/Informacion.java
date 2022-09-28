@@ -2,12 +2,8 @@ package TrabajoPractico_LaFacultad;
 
 public interface Informacion {
 
-    static int verCantidad(){
-        return 0;
-    }
+    int verCantidad();
 
-    static String listarContenido(){
+    String listarContenido();
 
-        return null;
-    }
 }

@@ -1,6 +1,7 @@
 package TrabajoPractico_LaFacultad;
 import java.util.LinkedList;
 
+
 public class Facultad {
 
     final private String nombre;
@@ -8,6 +9,7 @@ public class Facultad {
 
 
     public Facultad(String nombre){
+
         this.nombre = nombre;
         this.coleccionCarrera = new LinkedList<>();
     }
@@ -31,4 +33,14 @@ public class Facultad {
         }
     }
 
+
+    @Override
+    public int verCantidad() {
+        return 0;
+    }
+
+    @Override
+    public String listarContenido() {
+        return null;
+    }
 }

@@ -2,7 +2,7 @@ package TrabajoPractico_LaFacultad;
 
 import java.util.LinkedList;
 
-public class Materia {
+public class Materia implements Informacion{
 
     private String nombre;
     private Profesor titular;
@@ -12,6 +12,7 @@ public class Materia {
         this.nombre = nombre;
         this.titular = titular;
         this.coleccionEstudiantes = new LinkedList<>();
+
     }
     void agregarEstudiante(Estudiante estudiante){
         this.coleccionEstudiantes.add(estudiante);
@@ -23,6 +24,7 @@ public class Materia {
             }
         }
     }
+
     void modificarTitular(Profesor profesor) {
         setTitular(profesor);
     }
@@ -41,6 +43,7 @@ public class Materia {
 
     public void setTitular(Profesor titular) {
         this.titular = titular;
+
     }
 
     public LinkedList<Estudiante> getColeccionEstudiantes() {
@@ -59,4 +62,15 @@ public class Materia {
                 ",\n Estudiantes="  + coleccionEstudiantes.toString() +
                 '}';
     }
+
+    @Override
+    public int verCantidad() {
+        return 0;
+    }
+
+    @Override
+    public String listarContenido() {
+        return null;
+    }
+
 }

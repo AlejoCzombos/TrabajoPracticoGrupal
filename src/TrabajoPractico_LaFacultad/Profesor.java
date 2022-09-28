@@ -1,10 +1,22 @@
 package TrabajoPractico_LaFacultad;
 
-public class Profesor extends Persona{
+
+public class Profesor extends Persona {
+
+    private double basico;
+    private int antiguedad;
+    private double sueldo;
+    private int sueldoalcuadrado;
 
     public Profesor(String nombre, String apellido, int legajo) {
         super(nombre, apellido, legajo);
     }
+
+
+    public void calcularSueldo(double basico){
+        sueldo = (basico * 1.10) * antiguedad;
+    }
+
 
     @Override
     void modificarDatos(String nombre, String apellido, int legajo) {
@@ -40,4 +52,6 @@ public class Profesor extends Persona{
     public void setLegajo(int legajo) {
         super.setLegajo(legajo);
     }
+
 }
+

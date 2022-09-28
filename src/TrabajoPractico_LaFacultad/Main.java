@@ -10,6 +10,7 @@ public class Main {
         Estudiante e1 = new Estudiante("Agustin", "Mansilla", 1111);
 
 
+
         Facultad f1 = new Facultad("UTN");
 
         Carrera TUP = new Carrera("TUP");
@@ -34,7 +35,6 @@ public class Main {
         TUP.agregarMateria(qui);
 
         TUP.encontrarMateria("Matematicas");
-
 
         TUP.mostrarMaterias();
         //TUP.encontrarMateria("matematicas");
