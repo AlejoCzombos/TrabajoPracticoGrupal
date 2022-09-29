@@ -16,6 +16,7 @@ public class Materia {
     void agregarEstudiante(Estudiante estudiante){
         this.coleccionEstudiantes.add(estudiante);
     }
+
     void eliminarEstudiante(String nombre){
         for (Estudiante estudiante:coleccionEstudiantes){
             if (estudiante.getNombre().equals(nombre)){
@@ -51,12 +52,13 @@ public class Materia {
         this.coleccionEstudiantes = coleccionEstudiantes;
     }
 
+
     @Override
     public String toString() {
         return "Materia{" +
-                "nombre='" + nombre + '\'' +
-                ", titular=" + titular +
-                ",\n Estudiantes="  + coleccionEstudiantes.toString() +
+                "nombre='" + nombre + '\n' +
+                "titular=" + titular +
+                "\nEstudiantes="  + coleccionEstudiantes.toString() +
                 '}';
     }
 }

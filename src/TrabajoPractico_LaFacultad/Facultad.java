@@ -31,4 +31,17 @@ public class Facultad {
         }
     }
 
+    public void eliminarEstudiante(Estudiante estudiante){
+        for (Carrera carrera : coleccionCarrera){
+            for(Materia materia:carrera.getColeccionMateria()){
+                for(Estudiante viejoEstudiante : materia.getColeccionEstudiantes()){
+                    if(viejoEstudiante.equals(estudiante)){
+                        materia.getColeccionEstudiantes().remove(estudiante);
+                    }
+                }
+            }
+        }
+    }
+
+
 }
