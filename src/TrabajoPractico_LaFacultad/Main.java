@@ -1,35 +1,55 @@
 package TrabajoPractico_LaFacultad;
 
+import java.util.Comparator;
 import java.util.LinkedList;
 
 public class Main {
 
-    public static void main(String [] args){
+    public static void main(String[] args) {
 
-        LinkedList<Estudiante> estudiantes = new LinkedList<>();
+        Profesor p1 = new Profesor("Jorge", "Samchez", 12312223, 14);
+        Estudiante e1 = new Estudiante("Agustin", "Mansilla", 1111);
+        Estudiante e2 = new Estudiante("Bauto", "zampanella", 1234);
 
-        estudiantes.add(new Estudiante("Alejo", "Czombos", 222222));
-        estudiantes.add(new Estudiante("Agustin", "Campanella", 27345));
-        estudiantes.add(new Estudiante("Agustin", "Mansilla", 23541));
-        estudiantes.add(new Estudiante("Jose", "Alegre", 88888));
+        Carrera TUP = new Carrera("TUP");
+        Carrera ISI = new Carrera("ISI");
+        Facultad f1 = new Facultad("UTN");
 
-        Profesor profesor1 = new Profesor("Facundo", "Uferer", 23456);
+        Materia mates = new Materia("Matematicas", p1);
+        Materia qui = new Materia("Quimica", p1);
 
-        Materia LaboratorioII = new Materia("LaboratorioII", profesor1,estudiantes);
+        mates.agregarEstudiante(e2);
+        mates.agregarEstudiante(e1);
+        qui.agregarEstudiante(e2);
+        qui.agregarEstudiante(e1);
 
-        System.out.println( "Materia por default: "  + LaboratorioII.toString());
+        f1.agregarCarrera(TUP);
+        f1.agregarCarrera(ISI);
 
-        LaboratorioII.agregarEstudiante(new Estudiante("Matias", "Barboza", 27107));
+        f1.mostrarCarreras();
 
-        System.out.println("\n Materia con estudiante agregado: " + LaboratorioII.toString());
+        f1.eliminarCarrera("ISI");
 
-        LaboratorioII.eliminarEstudiante("Jose");
+        f1.mostrarCarreras();
 
-        System.out.println("\n Materia con estudiante de nombre 'Jose' eliminado: " + LaboratorioII.toString());
+        TUP.agregarMateria(mates);
+        TUP.agregarMateria(qui);
 
-        LaboratorioII.modificarTitular(new Profesor("Facundo", "Matoff", 23564));
+        TUP.encontrarMateria("Matematicas");
 
-        System.out.println("\n Materia con profesor modificado: " + LaboratorioII.toString());
+        TUP.mostrarMaterias();
+        //TUP.encontrarMateria("matematicas");
+
+        f1.eliminarEstudiante(e1);
+
+        System.out.println(mates.toString());
+
+
+        //f1.listarContenido();
+        mates.verCantidad();
+        TUP.verCantidad();
+        f1.verCantidad();
+
+
     }
-
 }
