@@ -1,13 +1,18 @@
 package TrabajoPractico_LaFacultad;
+import java.util.Calendar;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.LinkedList;
 
-public class Facultad {
+
+public class Facultad implements Informacion{
 
     final private String nombre;
     final private LinkedList<Carrera> coleccionCarrera;
 
 
     public Facultad(String nombre){
+
         this.nombre = nombre;
         this.coleccionCarrera = new LinkedList<>();
     }
@@ -44,4 +49,19 @@ public class Facultad {
     }
 
 
+    @Override
+    public void verCantidad() {
+        System.out.println(coleccionCarrera.size());
+    }
+
+    @Override
+    public void listarContenido() {
+        Collections.sort(coleccionCarrera, new Comparator<Carrera>() {
+            @Override
+            public int compare(Carrera o1, Carrera o2) {
+                return o1.getNombre().compareTo(o2.getNombre());
+            }
+        });
+        System.out.println(coleccionCarrera);
+    }
 }

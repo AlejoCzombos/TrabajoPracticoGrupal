@@ -12,7 +12,7 @@ public abstract class Persona {
         this.legajo = legajo;
     }
 
-    void modificarDatos(String nombre, String apellido, int legajo){
+    public void modificarDatos(String nombre, String apellido, int legajo){
         this.nombre = nombre;
         this.apellido = apellido;
         this.legajo = legajo;
@@ -44,10 +44,9 @@ public abstract class Persona {
 
     @Override
     public String toString() {
-        return "Persona{" +
-                "nombre='" + nombre + '\'' +
+        return "nombre='" + nombre + '\'' +
                 ", apellido='" + apellido + '\'' +
-                ", legajo=" + legajo +
-                "}";
+                ", legajo=" + legajo;
     }
+
 }
