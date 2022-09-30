@@ -40,10 +40,16 @@ public class Main {
         TUP.mostrarMaterias();
         //TUP.encontrarMateria("matematicas");
 
+        f1.eliminarEstudiante(e1);
+
+        System.out.println(mates.toString());
+
+
         //f1.listarContenido();
         mates.verCantidad();
         TUP.verCantidad();
         f1.verCantidad();
+
 
     }
 }

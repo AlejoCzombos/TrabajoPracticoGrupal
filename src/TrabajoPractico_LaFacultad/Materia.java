@@ -21,6 +21,7 @@ public class Materia implements Informacion{
 
         this.coleccionEstudiantes.add(estudiante);
     }
+
     void eliminarEstudiante(String nombre){
         for (Estudiante estudiante:coleccionEstudiantes){
             if (estudiante.getNombre().equals(nombre)){
@@ -58,13 +59,16 @@ public class Materia implements Informacion{
         this.coleccionEstudiantes = coleccionEstudiantes;
     }
 
+
     @Override
     public String toString() {
+
         return " Materia{" +
                 "nombre='" + nombre + '\'' +
                 ", titular=" + titular +
                 ",\n Estudiantes="  + coleccionEstudiantes.toString() +
                 "}\n";
+
     }
 
     //El método listarContenidos() de la interface Información lista los elementos de la clase contenida,

@@ -49,6 +49,9 @@ public class Carrera implements Informacion {
         }
     }
 
+    public LinkedList<Materia> getColeccionMateria() {
+        return coleccionMateria;
+    }
 
     public void mostrarMaterias() {
         System.out.println("Materias de "+this.nombre+":");
@@ -57,9 +60,11 @@ public class Carrera implements Informacion {
         }
     }
 
+
     @Override
     public String toString() {
         return "Carrera{" +
+
                 " nombre='" + nombre + '\'' +
                 ", coleccion de Materias=" + coleccionMateria +
                 '}';
