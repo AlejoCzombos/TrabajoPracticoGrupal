@@ -6,10 +6,10 @@ public class Profesor extends Persona {
     private double basico;
     private int antiguedad;
     private double sueldo;
-    private int sueldoalcuadrado;
 
-    public Profesor(String nombre, String apellido, int legajo) {
+    public Profesor(String nombre, String apellido, int legajo, int antiguedad) {
         super(nombre, apellido, legajo);
+        this.antiguedad = antiguedad;
     }
 
 
@@ -17,41 +17,6 @@ public class Profesor extends Persona {
         sueldo = (basico * 1.10) * antiguedad;
     }
 
-
-    @Override
-    void modificarDatos(String nombre, String apellido, int legajo) {
-        super.modificarDatos(nombre, apellido, legajo);
-    }
-
-    @Override
-    public String getNombre() {
-        return super.getNombre();
-    }
-
-    @Override
-    public void setNombre(String nombre) {
-        super.setNombre(nombre);
-    }
-
-    @Override
-    public String getApellido() {
-        return super.getApellido();
-    }
-
-    @Override
-    public void setApellido(String apellido) {
-        super.setApellido(apellido);
-    }
-
-    @Override
-    public int getLegajo() {
-        return super.getLegajo();
-    }
-
-    @Override
-    public void setLegajo(int legajo) {
-        super.setLegajo(legajo);
-    }
 
 }
 
