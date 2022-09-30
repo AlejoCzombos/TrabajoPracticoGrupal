@@ -13,9 +13,14 @@ public abstract class Persona {
     }
 
     public void modificarDatos(String nombre, String apellido, int legajo){
-        this.nombre = nombre;
-        this.apellido = apellido;
-        this.legajo = legajo;
+        try{
+            this.nombre = nombre;
+            this.apellido = apellido;
+            this.legajo = legajo;
+        }catch (Exception e){
+            e.printStackTrace();
+            System.out.println("Error en el ingreso de datos!");
+        }
     }
 
     public String getNombre() {

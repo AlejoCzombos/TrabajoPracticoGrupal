@@ -3,7 +3,7 @@ package TrabajoPractico_LaFacultad;
 
 public class Profesor extends Persona {
 
-    private double basico;
+    private double basico = 60000;
     private int antiguedad;
     private double sueldo;
 
@@ -13,8 +13,12 @@ public class Profesor extends Persona {
     }
 
 
-    public void calcularSueldo(double basico){
-        sueldo = (basico * 1.10) * antiguedad;
+    public double calcularSueldo(){
+        sueldo = basico;
+        for (int i = 0; i < antiguedad; i++){
+            sueldo += basico * 0.10;
+        }
+        return sueldo;
     }
 
 

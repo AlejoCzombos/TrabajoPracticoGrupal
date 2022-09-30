@@ -7,8 +7,8 @@ import java.util.Scanner;
 
 public class Carrera implements Informacion {
 
-    final private String nombre;
-    final private LinkedList<Materia> coleccionMateria;
+     private String nombre;
+     private LinkedList<Materia> coleccionMateria;
 
     public Carrera(String nombre){
         this.nombre = nombre;
@@ -23,7 +23,7 @@ public class Carrera implements Informacion {
         coleccionMateria.add(nuevaMateria);
     }
 
-    private void eliminarMateria(String materia){
+    public void eliminarMateria(String materia){
         for(Materia x : coleccionMateria){
             if(x.getNombre().equals(materia)){
                 coleccionMateria.remove(x);
@@ -32,14 +32,24 @@ public class Carrera implements Informacion {
     }
 
     public void encontrarMateria(String materia){
+        int opcion = 0;
+        Scanner s1 = new Scanner(System.in);
+
         boolean encontrado = false;
         for(Materia x : coleccionMateria){
-            if(x.getNombre().equals(materia.toLowerCase())){
+            if(x.getNombre().equals(materia)){
                 System.out.println(materia + " se encuentra dentro de " + getNombre());
                 encontrado = true;
                 System.out.println("Desea eliminar la materia?\n1 Si || 2 No");
-                Scanner s1 = new Scanner(System.in);
-                if(s1.nextInt() == 1){
+
+                try{
+                    opcion = s1.nextInt();
+                }catch (Exception e){
+                    e.printStackTrace();
+                    System.out.println("Error en el ingreso de datos!");
+                }
+
+                if(opcion == 1){
                     eliminarMateria(materia);
                 }
                 break;
@@ -64,14 +74,13 @@ public class Carrera implements Informacion {
     @Override
     public String toString() {
         return "Carrera{" +
-
                 " nombre='" + nombre + '\'' +
                 ", coleccion de Materias=" + coleccionMateria +
                 '}';
     }
 
-    public void verCantidad() {
-        System.out.println(coleccionMateria.size());
+    public int verCantidad() {
+       return coleccionMateria.size();
     }
 
     @Override

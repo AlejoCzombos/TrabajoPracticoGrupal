@@ -8,13 +8,12 @@ public class Materia implements Informacion{
 
     private String nombre;
     private Profesor titular;
-    LinkedList<Estudiante> coleccionEstudiantes;
+    private LinkedList<Estudiante> coleccionEstudiantes;
 
     public Materia(String nombre, Profesor titular) {
         this.nombre = nombre;
         this.titular = titular;
         this.coleccionEstudiantes = new LinkedList<>();
-
     }
 
     void agregarEstudiante(Estudiante estudiante){
@@ -48,9 +47,7 @@ public class Materia implements Informacion{
 
     public void setTitular(Profesor titular) {
         this.titular = titular;
-
     }
-
     public LinkedList<Estudiante> getColeccionEstudiantes() {
         return coleccionEstudiantes;
     }
@@ -62,24 +59,16 @@ public class Materia implements Informacion{
 
     @Override
     public String toString() {
-
         return " Materia{" +
                 "nombre='" + nombre + '\'' +
                 ", titular=" + titular +
-                ",\n Estudiantes="  + coleccionEstudiantes.toString() +
-                "}\n";
-
+                ", Estudiantes="  + coleccionEstudiantes.toString() +
+                "}";
     }
 
-    //El método listarContenidos() de la interface Información lista los elementos de la clase contenida,
-    //es decir que de la clase Facultad se listará las Carreras, de la clase Carreras las materias, etc. Siempre en orden alfabético.
-
-    //El método verCantidad() de la interface Información muestra la cantidad de elementos que contiene, es decir que en el caso de
-    //la clase Carreras, devolverá la cantidad de materias que posee, en el caso de la clase Materias, la cantidad de estudiantes que tienen, etc.
-
     @Override
-    public void verCantidad() {
-        System.out.println(coleccionEstudiantes.size());
+    public int verCantidad() {
+       return coleccionEstudiantes.size();
     }
 
     @Override
