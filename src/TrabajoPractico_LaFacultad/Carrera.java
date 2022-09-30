@@ -1,11 +1,11 @@
 package TrabajoPractico_LaFacultad;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.LinkedList;
 import java.util.Scanner;
 
 
 public class Carrera implements Informacion {
-    private String nombre;
-    private Materia coleccionMaterias;
 
     final private String nombre;
     final private LinkedList<Materia> coleccionMateria;
@@ -57,16 +57,26 @@ public class Carrera implements Informacion {
         }
     }
 
+    @Override
     public String toString() {
-        return nombre;
+        return "Carrera{" +
+                " nombre='" + nombre + '\'' +
+                ", coleccion de Materias=" + coleccionMateria +
+                '}';
     }
-}
-    public int verCantidad() {
-        return 0;
+
+    public void verCantidad() {
+        System.out.println(coleccionMateria.size());
     }
 
     @Override
-    public String listarContenido() {
-        return null;
+    public void listarContenido() {
+        Collections.sort(coleccionMateria, new Comparator<Materia>() {
+            @Override
+            public int compare(Materia o1, Materia o2) {
+                return o1.getNombre().compareTo(o2.getNombre());
+            }
+        });
+        System.out.println(coleccionMateria);
     }
 }
